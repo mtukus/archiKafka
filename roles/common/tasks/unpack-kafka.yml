@@ -1,0 +1,6 @@
+- name: Unpack kafka
+  unarchive:
+    remote_src: yes
+    src:  /home/confluent/kafka-3.3.2-src.tgz
+    dest: /home/confluent
+   

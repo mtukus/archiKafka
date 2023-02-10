@@ -1,0 +1,51 @@
+---
+- name: Find where the java path is on the machine
+  shell: which java
+  register: java_path
+- name: Print the java path for corresponding remote machine
+  debug:
+    msg: "Java installation path on {{ inventory_hostname }} ({{ ansible_default_ipv4.address }}): {{ java_path.stdout }} "
+- name: "Remove lines that contain JAVA_HOME"
+  lineinfile:
+    path: /home/confluent/.bashrc
+    # String to Search
+    regexp: "JAVA_HOME" 
+   # State is set to Absent to remove if the Searching Line is found
+    state: absent
+   # backup: yes
+    #register: example1out
+
+
+- name: Set the home path for Java, only if its not already set (backrefs att checks that)
+  lineinfile:
+    path: /home/confluent/.bashrc
+    line: "export JAVA_HOME=/usr/lib/jvm/java-17-openjdk-amd64"
+    state: present
+    backrefs: false
+   # backup: true
+
+- name: Set the execution path for Java, only if its not already set (backrefs att checks that)
+  lineinfile:
+    path: /home/confluent/.bashrc
+    line: "export PATH=${PATH}:${JAVA_HOME}/bin"
+    state: present
+    backrefs: false
+    #backup: true
+
+- name: Print the env var for every machine
+  command: echo $JAVA_HOME
+  become_user: confluent
+  register: java_var
+
+
+- name: Print it to the console
+  debug:
+    msg: "echo javapath gives: {{java_var.stdout_lines}}"
+
+#- name: Restore backup file
+#  copy:
+#    src: /home/confluent/.bashrc.bak
+#    dest: /home/confluent/.bashrc
+#    force: yes
+
+

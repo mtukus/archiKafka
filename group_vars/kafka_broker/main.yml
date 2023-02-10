@@ -1,0 +1,4 @@
+#kafka_broker_custom_properties:
+#  log.dirs: /home/confluent/logs
+#kafka_broker_log_dir: /home/confluent/logs
+#kafka_broker_sysctl_file: /etc/sysctl.conf

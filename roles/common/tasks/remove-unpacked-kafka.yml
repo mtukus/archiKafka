@@ -1,0 +1,5 @@
+- name: Remove unpacked kafka
+  file:
+    path: /home/confluent/kafka-3.3.2-src
+    state: absent
+  

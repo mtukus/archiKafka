@@ -1,0 +1,6 @@
+# tasks file for common
+- name: Include all tasks of the role common
+  include_tasks: "{{ item }}"
+  loop:
+  #- copy-file-server.yml
+  - change-broker-id.yml

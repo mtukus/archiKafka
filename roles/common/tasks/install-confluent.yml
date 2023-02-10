@@ -1,0 +1,18 @@
+#- name: Install Confluent Comunnity Kafka
+#  command: curl -O https://packages.confluent.io/archive/7.3/confluent-community-7.3.1.tar.gz
+#- name: Unzip confluent
+#  command: unzip confluent-community-7.3.1.zip
+- name: Unpack Confluent kafka
+  unarchive:
+    remote_src: yes
+    src:  /home/confluent/confluent-community-7.3.1.tar.gz
+    dest: /home/confluent
+
+- name: Remove unpacked kafka
+  file:
+    path: /home/confluent/confluent-community-7.3.1.zip
+    state: absent
+- name: Remove unpacked kafka
+  file:
+    path: /home/confluent/confluent-community-7.3.1.tar.gz
+    state: absent

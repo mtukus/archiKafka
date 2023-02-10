@@ -1,0 +1,4 @@
+- name: Send latest version of Kafka to the remote hosts, kafka-3.3.2
+  copy:
+    src: /home/mtukus/kafka-3.3.2-src.tgz
+    dest: /home/confluent/
