@@ -1,0 +1,18 @@
+- name: Replace the property value in the file
+  lineinfile:
+    dest: /home/confluent/confluent-7.3.1/etc/kafka/kraft/server1.properties
+    regexp: '^controller.quorum.voters=.*$'
+    line: "controller.quorum.voters=1@localhost:9093,2@uatgitbrkr12:9093,3@uatgitbrkr13:9093"
+    state: present
+- name: Replace the property value in the file
+  lineinfile:
+    dest: /home/confluent/confluent-7.3.1/etc/kafka/kraft/server2.properties
+    regexp: '^controller.quorum.voters=.*$'
+    line: "controller.quorum.voters=1@uatgitbrkr11:9093,2@localhost:9093,3@uatgitbrkr13:9093"
+    state: present
+- name: Replace the property value in the file
+  lineinfile:
+    dest: /home/confluent/confluent-7.3.1/etc/kafka/kraft/server3.properties
+    regexp: '^controller.quorum.voters=.*$'
+    line: "controller.quorum.voters=1@uatgitbrkr11:9093,2@uatgitbrkr12:9093,3@localhost:9093"
+    state: present

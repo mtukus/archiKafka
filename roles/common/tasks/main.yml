@@ -5,7 +5,4 @@
   - ping-common.yml
 #  - check-java-install-common.yml
 #  - find-install-path-java.yml
-#  - send-latest-kafka.yml
-#  - unpack-kafka.yml
-#  - remove-unpacked-kafka.yml
 #  - install-confluent.yml 

@@ -3,4 +3,10 @@
   include_tasks: "{{ item }}"
   loop:
   #- copy-file-server.yml
-  - change-broker-id.yml
+  #- change-broker-id.yml
+  #- controller-quorum-voters.yml
+  #- create-cluster-id.yml
+  #- change-log-dirs.yml
+  #- format-storage-dir.yml
+  - start-brokers.yml
+  #- status-brokers.yml
