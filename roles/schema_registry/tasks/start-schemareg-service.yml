@@ -1,4 +1,4 @@
 - name: Start Kafka service
   become: yes
-  shell: systemctl start kafka.service
+  shell: systemctl start schemareg.service
 

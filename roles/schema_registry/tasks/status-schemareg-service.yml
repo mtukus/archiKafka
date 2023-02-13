@@ -5,4 +5,4 @@
 
 - name: Print the status of each schema reg instance
   debug:
-    var: kafka_registry_status.stdout
+    var: schema_registry_status.stdout

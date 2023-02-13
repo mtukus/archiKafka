@@ -1,0 +1,11 @@
+[Unit]
+Description=Confluent Kafka Server
+
+[Service]
+User=confluent
+ExecStart=/home/confluent/confluent-7.3.1/bin/schema-registry-start /home/confluent/confluent-7.3.1/etc/schema-registry/schema-registry.properties
+Restart=always
+RestartSec=15s
+
+[Install]
+WantedBy=multi-user.target
