@@ -1,0 +1,6 @@
+---
+- name: Create Kafka service file
+  become: yes
+  copy:
+    src: schemareg.service
+    dest: /etc/systemd/system/schemareg.service

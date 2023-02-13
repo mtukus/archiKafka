@@ -1,0 +1,13 @@
+# tasks file for common
+- name: Include all tasks of the role common
+  include_tasks: "{{ item }}"
+  loop:
+  #- copy-file-properties.yml
+  #- change-properties.yml
+  #- copy-service.yml
+  #- reload-service.yml
+  #- start-schemareg-service.yml
+  - status-schemareg-service.yml
+
+
+
