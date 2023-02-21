@@ -6,3 +6,4 @@
 #  - check-java-install-common.yml
 #  - find-install-path-java.yml
 #  - install-confluent.yml 
+  - copy-pubkey-ca.yml

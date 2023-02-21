@@ -1,0 +1,9 @@
+- name: Create dir named ssl on the remote hosts
+  file:
+    path: /home/confluent/ssl
+    state: directory
+
+- name: Task to copy the public key of the ca
+  copy:
+    src: /home/mtukus/dev/ansible/ansible-aswatson-kafka/ssl/ca-cert
+    dest: /home/confluent/ssl/

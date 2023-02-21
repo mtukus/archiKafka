@@ -1,8 +1,8 @@
-- name: Copy file servers 1
-  copy:
-    remote_src: true
-    src: /home/confluent/confluent-7.3.1/etc/kafka/kraft/server.properties
-    dest: /home/confluent/confluent-7.3.1/etc/kafka/kraft/server1.properties
+#- name: Copy file servers 1
+#  copy:
+#    remote_src: true
+#    src: /home/confluent/confluent-7.3.1/etc/kafka/kraft/server.properties
+#    dest: /home/confluent/confluent-7.3.1/etc/kafka/kraft/server1.properties
 #- name: Copy file servers 2
 #  copy:
 #    remote_src: true

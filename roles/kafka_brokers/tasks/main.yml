@@ -11,5 +11,7 @@
   #- create-service.yml
   #- reload-service.yml
   #- start-kafka-service.yml
+  #- fetch-request-cert.yml
+  - send-signed-certs.yml
   - status-kafka-service.yml
   
